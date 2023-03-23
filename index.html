@@ -18,6 +18,8 @@
         <input type="submit" value="Upload">
     </form>
     <h1>Mytube Videos</h1>
+    <h4>all of this work is completeley open source so if you want to run on your own server go to here:https://github.com/lachhhh/MyTube</h4>
+
     {% for video in videos %}
     <a href="{{ url_for('play', filename=video.filename) }}">
         <img src="{{ url_for('static', filename='thumbnails/' + video.thumbnail) }}" style="max-width: 200px;">
