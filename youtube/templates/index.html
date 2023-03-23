@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mytube</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h1>Mytube</h1>
+
+    <h2>Upload</h2>
+    <h3>mp4 only</h3>
+
+    <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="video" accept="video/*">
+        <input type="submit" value="Upload">
+    </form>
+    <h1>Mytube Videos</h1>
+    {% for video in videos %}
+    <a href="{{ url_for('play', filename=video.filename) }}">
+        <img src="{{ url_for('static', filename='thumbnails/' + video.thumbnail) }}" style="max-width: 200px;">
+        <p>{{ video.filename }}</p>
+    </a>
+    {% endfor %}
+
+</body>
+</html>
