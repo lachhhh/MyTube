@@ -1,0 +1,11 @@
+.video-thumbnail {
+    display: inline-block;
+    margin: 10px;
+}
+
+.video-title {
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
