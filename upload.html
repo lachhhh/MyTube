@@ -1,0 +1,24 @@
+<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video</title>
+</head>
+<body>
+    <h1>Upload Video</h1>
+    <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required>
+        <br>
+        <label for="video">Video:</label>
+        <input type="file" name="video" id="video" accept="video/*" required>
+        <br>
+        <label for="thumbnail">Thumbnail:</label>
+        <input type="file" name="thumbnail" id="thumbnail" accept="image/*" required>
+        <br>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
