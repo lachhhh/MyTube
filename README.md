@@ -11,3 +11,5 @@ Any video on the site you can download with ease without any redirects or ads.
 
 
 example on pages
+made mainly by walleye
+pages and repo made by lachhhh
