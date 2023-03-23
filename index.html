@@ -17,13 +17,27 @@
         <input type="file" name="video" accept="video/*">
         <input type="submit" value="Upload">
     </form>
+
     <h1>Mytube Videos</h1>
     {% for video in videos %}
-    <a href="{{ url_for('play', filename=video.filename) }}">
-        <img src="{{ url_for('static', filename='thumbnails/' + video.thumbnail) }}" style="max-width: 200px;">
-        <p>{{ video.filename }}</p>
-    </a>
+        <a href="{{ url_for('play', filename=video.filename) }}">
+            <img src="{{ url_for('static', filename='thumbnails/' + video.thumbnail) }}" style="max-width: 200px;">
+            <p>{{ video.filename }}</p>
+        </a>
     {% endfor %}
+
+    <script>
+        function redirectUpload() {
+            window.location.href = "{{ url_for('upload') }}";
+        }
+
+        function redirectPlay() {
+            window.location.href = "{{ url_for('play', filename=videos[0].filename) }}";
+        }
+    </script>
+
+    <button onclick="redirectUpload()">Upload</button>
+    <button onclick="redirectPlay()">Play</button>
 
 </body>
 </html>
